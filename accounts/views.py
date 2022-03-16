@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, ProfileUpdateForm, UserUpdateForm
 
 
 def register(request):
@@ -33,6 +33,5 @@ def profile(request):
     context = {
         'user_form': user_form,
         'profile_form': profile_form
-    }
+        }
     return render(request, 'accounts/profile.html', context)
-
